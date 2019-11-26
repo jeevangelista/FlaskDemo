@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Cool App</a>
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="{{url_for('index')}}">Home</a></li>
+                        <li><a href="{{url_for('about')}}">About</a></li>
+                        <li><a href="{{url_for('hello_world', name='world')}}">Hello World</a></li>
+                        <li><a href="{{url_for('gene_enrichment')}}">Gene Enrichment</a></li>
+                    </ul>
+                </div>
+            </nav>            
+        </header>
+        <body>
+            <div>
+                {% block content %}{% endblock %}
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </body>
+    </body>
+</html>

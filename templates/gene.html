@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Gene Enrichment{% endblock %}
+{% block content %}
+    {% if genes%}
+        <ul>
+            {% for gene in genes %}
+                <li>{{gene}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field">
+                <textarea id="genes" placeholder="List of genes separated by whitespace"
+                    name="genes" class="materialize-textarea"></textarea>
+                <label for="genes">list of genes</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit">Submit
+            </button>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
