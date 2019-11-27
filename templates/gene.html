@@ -2,14 +2,24 @@
 {% block title %}Gene Enrichment{% endblock %}
 {% block content %}
     {% if genes%}
-        <ul>
-            {% for gene in genes %}
-                <li>{{gene}}</li>
-            {% endfor %}
-        </ul>
+
+      <table>
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Enrichr Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{uid}}</td>
+            <td><a href="{{enrichr_link}}">{{enrichr_link}}</a></td>
+          </tr>
+        </tbody>
+      </table>
     {% else %}
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" method="POST">
             <div class="input-field">
                 <textarea id="genes" placeholder="List of genes separated by whitespace"
                     name="genes" class="materialize-textarea"></textarea>
